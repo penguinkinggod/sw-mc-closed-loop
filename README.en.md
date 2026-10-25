@@ -26,7 +26,7 @@ Designed for 2-axis lathe machining of stepped shafts and bushings. Uses a 20-op
 ## System Flow
 
 ```mermaid
-graph TD
+flowchart TD
     A1[JSON Form / NLP Input] --> B[Parameter Validation]
     A2[STEP File Import] --> B
     

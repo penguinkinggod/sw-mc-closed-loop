@@ -26,7 +26,7 @@
 ## 系统流程
 
 ```mermaid
-graph TD
+flowchart TD
     A1[JSON 表单 / NLP 输入] --> B[参数校验]
     A2[STEP 文件导入] --> B
     
