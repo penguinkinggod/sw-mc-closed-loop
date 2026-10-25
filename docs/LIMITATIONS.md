@@ -10,13 +10,18 @@ Changing to milling, turn-mill, freeform surfaces, assemblies, or arbitrary draw
 
 The current project record does **not** establish:
 
-- Mastercam toolpath simulation acceptance;
 - independent collision or gouge checking;
 - fixture, chuck, tool-holder, or machine-envelope validation;
 - controller-specific semantic validation for every NC command;
 - physical cutting, dimensional measurement, surface-finish measurement, or cycle-time acceptance.
 
 NC text scans can catch selected structural problems. They cannot prove that a program is safe to run.
+
+## Where the Toolpaths Come From
+
+These are not hand-written G-code blocks. The toolpaths are computed by the Mastercam kernel and the NC output is produced by Mastercam post processors. Toolpath planning, feed computation, and postprocessing therefore come from a commercial CAM system that has long been used in production environments, not from motion-planning code written for this project.
+
+The author's personal assessment of usability is reasonably high on that basis. That is an assessment of the **source**, not a validation of the **result**: no run on a real machine has been performed, so the output remains unverified until an operator confirms it independently.
 
 ## SolidWorks and STEP
 

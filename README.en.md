@@ -179,18 +179,22 @@ Operation ↔ layer name ↔ chain level ↔ minimum entity count is written in 
 
 All three paths share input parameters, but each stage generates per purpose — **cannot claim "fully common source" based on parameter consistency alone**.
 
-### No Simulation, No Machining Verification
+### No Collision Checking, No Machining Verification
 
-- ❌ No Mastercam toolpath simulation
 - ❌ No collision detection
-- ❌ No actual machining verification
+- ❌ No physical cutting verification
 - ⚠️ NC programs only passed text structure scanning (M8/M9, coordinate range, tool numbers)
+
+**On where the toolpaths come from:** these are not hand-written or spliced G-code blocks. The toolpaths are computed by the Mastercam kernel, and the NC output is produced by Mastercam post processors. Toolpath planning, feed calculation, and postprocessing all come from a commercial CAM system that has been used in industry for a long time, not from algorithms written for this project.
+
+**However, the author has not verified this on a real machine**, so this is a judgment about the reliability of the source, not a claim that the result has been validated. The author's personal assessment of usability is reasonably high; actual operation still requires independent confirmation by the operator.
 
 ---
 
 ## Usage & Responsibility
 
-> **This system has no simulation, no collision detection, no machining verification.**  
+> **This system has no collision detection and no physical cutting verification.**  
+> Toolpaths are computed by the Mastercam kernel and NC output is produced by Mastercam post processors, but this was not verified on a real machine.  
 > NC programs only passed text structure scanning, no guarantee of producing qualified parts.  
 > The operator is responsible for machine, fixture, tools, feed parameters, and physical test procedure.
 
@@ -200,7 +204,7 @@ All three paths share input parameters, but each stage generates per purpose —
 
 - [Project Overview](docs/PROJECT_OVERVIEW.md) — Positioning, why it is layered this way, phase closeout
 - [Architecture Notes](docs/ARCHITECTURE.md) — Pipeline layering, semantic layers, template isolation, operation contracts
-- [Limitations & Verification Boundaries](docs/LIMITATIONS.md) — No simulation, no physical cutting, SW/STEP verification gaps, drawing boundaries
+- [Limitations & Verification Boundaries](docs/LIMITATIONS.md) — No collision checking, no physical cutting, toolpath source note, SW/STEP verification gaps, drawing boundaries
 
 ---
 
