@@ -1,0 +1,34 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local secrets and environments
+.env
+.env.*
+*.sln.user
+
+# Development binaries and commercial CAD/CAM artifacts
+*.dll
+*.exe
+*.pdb
+*.mcam
+*.mcx
+*.SLDPRT
+*.SLDASM
+*.SLDDRW
+*.STEP
+*.STP
+*.dxf
+*.DXF
+*.nc
+*.NC
+*.nci
+*.NCI
+
+# Local generated folders
+build/
+dist/
+out/
+tmp/
