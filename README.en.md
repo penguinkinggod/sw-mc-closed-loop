@@ -157,6 +157,32 @@ DXF is not just a pile of lines and arcs, but **organized by machining intent**:
 
 ---
 
+## Process Images
+
+The three images follow the order `Mastercam levels → NC toolpath → engineering drawing`, matching the semantic-chain, postprocessing, and drawing stages of the project.
+
+### 1. Mastercam semantic layers
+
+The Level Manager on the right shows `S1_*` / `S2_*` groups for roughing, finishing, bores, grooves, and threads. The graphics on the left show the same DXF after import and layer separation.
+
+![Mastercam semantic layers](media/01-mastercam-layers.png)
+
+### 2. NC toolpath
+
+The postprocessor output as `.NC` text, showing G21 metric mode, G18 turning plane, tool number, spindle speed, feed, and circular interpolation.
+
+![NC toolpath](media/03-nc-toolpath.png)
+
+### 3. Engineering drawing
+
+The engineering drawing is generated from STEP geometry independently of the Mastercam path. Front view, end view, isometric view, dimensions, and title block all come from the same STEP data.
+
+![STEP-derived engineering drawing](media/02-engineering-drawing.png)
+
+> Automatic generation still requires manual review of layout, annotation clearance, and process notes; a generated sheet is not a released drawing.
+
+---
+
 ## Limitations & Boundaries
 
 ### Only One Part Family
